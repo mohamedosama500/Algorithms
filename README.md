@@ -10,3 +10,11 @@
 
 
 	- DFS uses recursion to explore as deep as possible first. The function keeps calling itself for unvisited neighbors.
+
+
+-> Cycles in a Graph [DFS with Recursion Stack]:
+
+
+	- Keep track of visited vertices.
+	- Keep a stack of vertices that are currently in the recursion.
+	- If you encounter a vertex that is already in the recursion stack, a cycle is detected..
