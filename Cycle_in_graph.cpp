@@ -20,7 +20,7 @@ public:
 
         // Recur for all the vertices adjacent to this node
         for (char neighbor : adjList[node]) {
-            // If the neighbor is not visited, recurse on it
+            // If the neighbor is not visited, recurse on it, this condition used for disconnected graphs 
             if (!visited[neighbor] && dfs(neighbor, visited, recStack))
                 return true;
             // If the neighbor is in the recursion stack, it means there's a cycle
@@ -57,7 +57,7 @@ int main() {
     g.addEdge('A', 'B');
     g.addEdge('B', 'C');
     g.addEdge('C', 'A'); // This creates a cycle: A -> B -> C -> A
-
+	//example here for disconnected graphs
     g.addEdge('D', 'E');
     g.addEdge('E', 'F'); // No cycle here
 
