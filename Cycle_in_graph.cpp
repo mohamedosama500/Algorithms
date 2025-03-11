@@ -1,6 +1,6 @@
 #include <iostream>
-#include <vector>
 #include <unordered_map>
+#include <vector>
 using namespace std;
 
 class Graph {
@@ -18,7 +18,7 @@ public:
         visited[node] = true;
         recStack[node] = true;
 
-        // Recur for all the adjacent vertices of this node
+        // Recur for all the vertices adjacent to this node
         for (char neighbor : adjList[node]) {
             // If the neighbor is not visited, recurse on it
             if (!visited[neighbor] && dfs(neighbor, visited, recStack))
@@ -29,7 +29,7 @@ public:
             }
         }
 
-        // Remove the node from recursion stack before returning
+        // Remove the vertex from recursion stack before returning
         recStack[node] = false;
         return false;
     }
@@ -57,6 +57,9 @@ int main() {
     g.addEdge('A', 'B');
     g.addEdge('B', 'C');
     g.addEdge('C', 'A'); // This creates a cycle: A -> B -> C -> A
+
+    g.addEdge('D', 'E');
+    g.addEdge('E', 'F'); // No cycle here
 
     if (g.detectCycle())
         cout << "Cycle detected!" << endl;

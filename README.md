@@ -17,4 +17,10 @@
 
 	- Keep track of visited vertices.
 	- Keep a stack of vertices that are currently in the recursion.
-	- If you encounter a vertex that is already in the recursion stack, a cycle is detected..
+	- If you encounter a vertex that is already in the recursion stack, a cycle is detected.
+
+
+-> Binary tree diameter:
+
+
+	- The diameter of a binary tree is the longest path between any two nodes in the tree. It is measured in terms of the number of edges along the path.
