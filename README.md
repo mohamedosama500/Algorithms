@@ -27,7 +27,7 @@
 
 
 
-->Algorithm to Find the In-Order Successor
+-> Algorithm to Find the In-Order Successor
 
 	- If the node has a right subtree, the successor is the leftmost node in the right subtree.
 	- If the node has no right subtree, the successor is the lowest ancestor for which the given node is in its left subtree.
