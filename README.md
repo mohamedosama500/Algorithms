@@ -24,3 +24,18 @@
 
 
 	- The diameter of a binary tree is the longest path between any two nodes in the tree. It is measured in terms of the number of edges along the path.
+
+
+
+->Algorithm to Find the In-Order Successor
+
+	- If the node has a right subtree, the successor is the leftmost node in the right subtree.
+	- If the node has no right subtree, the successor is the lowest ancestor for which the given node is in its left subtree.
+
+	- Using In-Order Traversal in a Binary Search Tree (BST)
+		Left Subtree → Root → Right Subtree
+		This means:
+
+			First, visit the left subtree.
+			Then, visit the root node.
+			Finally, visit the right subtree.
