@@ -39,3 +39,9 @@
 			First, visit the left subtree.
 			Then, visit the root node.
 			Finally, visit the right subtree.
+
+-> valid Binary Search Tree (BST).
+
+	- The left subtree of a node contains only nodes with values less than the node's value.
+	- The right subtree of a node contains only nodes with values greater than the node's value.
+	- Both left and right subtrees must also be BSTs.
