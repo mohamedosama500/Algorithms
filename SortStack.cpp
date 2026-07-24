@@ -1,4 +1,8 @@
 #include <iostream>
+/* 
+ to include <stack> is to get access to
+ those LIFO ("Last-In, First-Out") operations: push(), pop(), top(), and empty()
+ */
 #include <stack>
 #include <vector>
 
