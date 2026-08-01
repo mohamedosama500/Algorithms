@@ -10,6 +10,13 @@ struct ListNode {
 class Solution {
 public:
     ListNode* addMultipleNumbers(std::vector<ListNode*>& lists) {
+        /*
+           if you don't use a dummy node
+           You would have to check whether the head is nullptr on every single iteration
+           for the curr pointer, so make sure it starts from begining initialized.
+        */
+        // dummyHead will be used at last of loop
+        // it permanently remembers where your result list begins. At the end
         ListNode* dummyHead = new ListNode(0);
         ListNode* curr = dummyHead;
         int carry = 0;
@@ -19,6 +26,16 @@ public:
             bool hasActiveNodes = false;
 
             // Add values from all non-null lists at the current position
+            /*
+                /* For example: 
+                    List 1: 9 -> 8 
+                    List 2: 9 -> 8 
+                    List 3: 9 -> 8 
+
+                    we are adding the first column for the first cycle
+                    for all nodes then we take the carry after that then
+                    we make Pointers are now sitting on the SECOND nodes for all lists
+            */
             for (int i = 0; i < lists.size(); ++i) {
                 if (lists[i] != nullptr) {
                     sum += lists[i]->val;
@@ -29,12 +46,24 @@ public:
 
             // Stop if no lists have nodes left and carry is zero
             if (!hasActiveNodes && carry == 0) break;
-
+            // Integer devision gives the carry for the next 
+            // As each node in a linked list can only hold a single digit (0 through 9)
             carry = sum / 10;
+            // Creates a new node with the extracted digit and attaches it to our result list and 
+            // Gives single digit for the current position [curr = curr->next]
+            /* For example: 
+                    List 1: 9 -> 8 
+                    List 2: 9 -> 8 
+                    List 3: 9 -> 8 
+                    Actual Math  89 + 89 + 89 = 267 Stored as  7 --> 6 --> 2
+            */
+            // Output Node Created: curr->next
             curr->next = new ListNode(sum % 10);
+            // At last cycle curr will be nullptr
             curr = curr->next;
         }
-
+        // Here dummyHead will points to first node created which is 7 to sens the result
+        // as 7 --> 6 --> 2
         ListNode* result = dummyHead->next;
         delete dummyHead;
         return result;
